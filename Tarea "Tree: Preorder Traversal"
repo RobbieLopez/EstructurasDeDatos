@@ -1,0 +1,10 @@
+void preOrder( struct node *root) {
+    struct node *temporal;
+    temporal=root;
+    if(temporal!=NULL)
+      {  
+        printf("%d ",temporal->data);
+        preOrder(temporal->left);
+        preOrder(temporal->right);
+    }
+}
