@@ -1,0 +1,31 @@
+DoublyLinkedListNode* sortedInsert(DoublyLinkedListNode* head, int data) {
+DoublyLinkedListNode *nuevo = (DoublyLinkedListNode*) malloc(sizeof(DoublyLinkedListNode)); 
+    nuevo->data = data; 
+   if(head == NULL) {
+       nuevo->next = NULL; 
+       nuevo->prev = NULL;
+       return nuevo;
+   }
+   if(head->data >= nuevo->data)
+   {
+       nuevo->next = head; 
+       nuevo->prev = NULL;
+       head->prev = nuevo; 
+       head = nuevo;
+   } 
+   else {
+       DoublyLinkedListNode *tmp = head;
+       while(tmp->next != NULL && tmp->next->data < nuevo->data) 
+       {
+           tmp = tmp->next;
+       }
+       nuevo->prev = tmp;
+       nuevo->next = tmp->next;
+       if(tmp->next != NULL) 
+       {
+           tmp->next->prev = nuevo;
+       }
+       tmp->next = nuevo; 
+   } 
+   return head;
+}
