@@ -1,0 +1,20 @@
+void reversePrint(SinglyLinkedListNode* head) {
+SinglyLinkedListNode* tmp=NULL;
+    tmp=head;
+    int i,j,k;
+    j=0;i=0;
+    while(tmp!=NULL){
+        i++;
+        tmp=tmp->next;
+    }
+    j=i;
+    tmp=head;
+    for(int k=1;k<=i;k++){
+        for(int l=1;l<j;l++){
+            tmp=tmp->next;
+        }
+        printf("%d\n",tmp->data);
+        tmp=head;
+        j--;
+    }
+}
