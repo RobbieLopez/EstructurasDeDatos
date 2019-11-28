@@ -1,15 +1,14 @@
 
 #include "pila.h"
-
-
 struct pila *cabeza = NULL;
-struct pila *actual = NULL;
+
+
 
 struct pila *
 push (int dato, struct pila *pila)
 {
 
-  struct pila *nodo = (struct pila *) malloc (sizeof (struct pila *));
+  struct pila *nodo = (struct pila *) malloc (sizeof (struct pila ));
 
   if (NULL == nodo)
     {
@@ -59,7 +58,7 @@ mostrar (struct pila *pila)
 	  nodo = nodo->siguiente;
 	}
 
-      printf ("\nFinal de la Pila\n");
+      printf ("\nFondo de la Pila\n");
 
     }
   return pila;
