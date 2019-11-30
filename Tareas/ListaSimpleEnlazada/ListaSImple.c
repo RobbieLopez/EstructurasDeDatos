@@ -1,16 +1,14 @@
 #include "ListaSImple.h"
-/*
-struct Lista* crearlista(struct nodo *lista)
-{
-	Lista=NULL;
-	return lista;
-}*/
 
 struct Lista *
 insertar (struct Lista *Lista, int dato)
 {
   struct Lista *nuevo = (struct Lista *) malloc (sizeof (struct Lista));
   struct Lista *tmp;
+  if(!nuevo)
+    {
+      exit(-1);
+    }
   nuevo->dato = dato;
 
   if (Lista == NULL)
