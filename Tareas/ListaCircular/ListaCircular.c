@@ -6,6 +6,9 @@ insertar (int dato, struct Lista *Lista)
   struct Lista *nuevo = NULL;
   struct Lista *tmp = NULL;
   nuevo = (struct Lista *) malloc (sizeof (struct Lista));
+  if(!nuevo){
+  exit();
+  }
   nuevo->dato = dato;
   if (Lista == NULL)
     {
