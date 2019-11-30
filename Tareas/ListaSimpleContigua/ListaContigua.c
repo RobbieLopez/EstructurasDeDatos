@@ -12,7 +12,10 @@ insertar (struct Lista *Lista, int dato)
     }
 
   tmp = (int *) malloc ((Lista->Fin * 2) * sizeof (int));
-
+  if (!tmp)
+    {
+      exit(-1);
+    }
   *(tmp + (Lista->Fin)) = dato;
 
   if (tmp == NULL)
