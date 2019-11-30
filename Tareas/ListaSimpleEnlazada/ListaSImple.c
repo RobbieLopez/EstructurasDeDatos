@@ -5,7 +5,7 @@ insertar (struct Lista *Lista, int dato)
 {
   struct Lista *nuevo = (struct Lista *) malloc (sizeof (struct Lista));
   struct Lista *tmp;
-  if(!nuevo)
+  if(nuevo==NULL)
     {
       exit(-1);
     }
